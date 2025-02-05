@@ -5,37 +5,216 @@ body {
 /* 👇👇👇 Paste the styles of your Fancy Robot from the "Position it right" assignment here 👇👇👇 */
 
 .robot-container {
+  margin: auto;
+  width: 400px;
+  height: 50%;
+  box-sizing: border-box;
 }
-
 .robot-face-shape {
+  position: relative;
+  background: orange;
+  background-position: center;
+  width: 210px;
+  height: 210px;
+  top: 75px;
+  left: 60px;
+  border: 2px solid burlywood;
+  border-radius: 15%;
+}
+.robot-eye-left {
+  background: silver;
+  position: relative;
+  width: 30px;
+  height: 20px;
+  top: 60px;
+  left: 45px;
+  border: 1px solid black;
+  opacity: 50%;
+  animation: moving-left-eye 3s ease-in-out infinite;
 }
 
-.robot-eye-left {
+@keyframes moving-left-eye {
+  0% {
+    background: purple;
+  }
+  50% {
+    background: linear-gradient(to top, silver, purple);
+    top: 50%;
+  }
+  100% {
+    background: purple;
+    bottom: 100%;
+  }
 }
 
 .robot-eye-right {
+  background: #00bf8f; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #00bf8f,
+    #001510
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #00bf8f,
+    #001510
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  position: relative;
+  width: 20px;
+  height: 30px;
+  top: 35px;
+  left: 130px;
+  border: 1px solid black;
+  border-radius: 30%;
+  animation: right-eye-scale 2s none infinite alternate 2s;
+}
+
+@keyframes right-eye-scale {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.5);
+  }
 }
 
 .robot-ear-left {
+  position: relative;
+  width: 0;
+  height: 0;
+  bottom: 100px;
+  left: 5px;
+  border-top: 50px solid red;
+  border-left: 50px solid transparent;
+  animation: fade-in-out 4s ease-in-out infinite;
 }
-
 .robot-ear-right {
+  position: relative;
+  width: 0;
+  height: 0;
+  bottom: 150px;
+  left: 280px;
+  border-top: 50px solid teal;
+  border-right: 50px solid transparent;
+  animation: fade-in-out 2s ease-in-out infinite;
 }
-
+@keyframes fade-in-out {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
 .robot-nose {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  box-shadow: 5px 12px 0 0 red;
+  top: 30px;
+  left: 75px;
+  animation: rotate 3s linear infinite;
 }
 
-.robot-nose:before {
-}
-
-.robot-nose:after {
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 .robot-teeth {
+  position: relative;
+  width: 99px;
+  height: 45px;
+  overflow: hidden;
+  background: black;
+  border: 4px solid green;
+  top: 60px;
+  left: 55px;
+  border-radius: 50%;
+  border-top-left-radius: 25px;
+  border-bottom-left-radius: 180px;
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 180px;
+  animation: robot-teeth-animation 10s ease-in-out infinite;
+}
+
+@keyframes robot-teeth-animation {
+  0% {
+    border-color: green;
+  }
+  20% {
+    border-color: lightgreen;
+  }
+  40% {
+    border-color: red;
+  }
+  60% {
+    border-color: blue;
+  }
+  80% {
+    border-color: teal;
+  }
 }
 
 .robot-tooth {
+  position: relative;
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-bottom: 1px solid white;
+  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 2px;
+  background-color: ghostwhite;
+  left: 4px;
 }
 
 .robot-hair-style {
+  position: relative;
+  width: 180px;
+  height: 45px;
+  bottom: 290px;
+  left: 80px;
+}
+.robot-hair-style:hover {
+  animation: hover-effect 1s ease-in-out infinite alternate;
+}
+@keyframes hover-effect {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.2);
+  }
+}
+.robot-hair-one {
+  position: relative;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-color: wheat;
+}
+.robot-hair-two {
+  position: relative;
+  display: inline-block;
+  width: 35px;
+  height: 30px;
+  background: #d38312;
+}
+.robot-hair-three {
+  position: relative;
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  background-image: url("https://picsum.photos/seed/picsum/200/300");
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
 }
